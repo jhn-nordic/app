@@ -460,7 +460,7 @@ export const Cat = ({ catId }: { catId: string }) => (
 												lng: parseFloat,
 												date: v => new Date(v),
 											}}
-											QueryString={`SELECT reported.gps.ts as date, reported.gps.v.lat as lat, reported.gps.v.lng as lng FROM ${athenaDataBase}.${athenaRawDataTable} WHERE deviceId='${catId}' AND reported.gps IS NOT NULL ORDER BY reported.gps.ts DESC LIMIT 10`}
+											QueryString={`SELECT reported.gps.ts as date, reported.gps.v.lat as lat, reported.gps.v.lng as lng FROM ${athenaDataBase}.${athenaRawDataTable} WHERE deviceId='${catId}' AND reported.gps IS NOT NULL ORDER BY reported.gps.ts DESC LIMIT 60`}
 											workGroup={athenaWorkGroup}
 											loading={
 												<Map

@@ -53,8 +53,8 @@ export const Map = ({
 			}}
 		>
 			<TileLayer
-				attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-				url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+				attribution='&amp;copy <a href="http://www.kartverket.no/">Kartverket</a> contributors'
+				url="https://opencache.statkart.no/gatekeeper/gk/gk.open_gmaps?layers=topo4&zoom={z}&x={x}&y={y}"
 			/>
 			<Marker position={[lat, lng]}>
 				<Popup>{label}</Popup>
@@ -92,7 +92,7 @@ export const Map = ({
 			)}
 			{history &&
 				history.map(({ lat, lng }, k) => {
-					const alpha = Math.round((1 - k / 10) * 255).toString(16)
+					const alpha = Math.round((1 - 0 / 10) * 255).toString(16)
 					const color = `#1f56d2${alpha}`
 					return (
 						<React.Fragment key={`history-${k}`}>
